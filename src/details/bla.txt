@@ -1,0 +1,5 @@
+Alritgh so first we need to fetch poke data 
+then fetch the species data and that species data will be the main data sources
+then get fetch the evolution chain
+and using the "name" fetch the poke data like pokeapi/v2/pokemon/${evo_chain.species.name};
+and display the image 👍

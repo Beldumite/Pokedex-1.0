@@ -1,0 +1,13 @@
+<section class="text-center m-" id="header">
+  <div id="Name">
+    <h1>
+      ${ pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) }
+      <span>#${pokemon.id}</span>
+    </h1>
+    <h2>The ${enGenus}</h2>
+  </div>
+  <div id="img">
+    <img src="${ pokemon.sprites.other["official-artwork"].front_default }"
+    alt="image of ${pokemon.name}">
+  </div>
+</section>
