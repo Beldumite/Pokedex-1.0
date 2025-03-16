@@ -1,2 +1,3 @@
-# Pokedex-V1
-My try to make a pokemon pokedex
+# Pokedex-1.0
+My try to make a pokemon pokedex (On development)
+
