@@ -1,16 +1,19 @@
 import { fetchPokemon } from "./fetchPokemon.js";
 import { typeColors } from "./typeColors.js";
+import { generatePagingButton } from "./paging.js";
 
-export async function generatePokemonCards() {
+export async function generatePokemonCards(page = 1, itemsperpage = 20) {
   const section = document.querySelector("#card");
   if (!section) {
     console.error("div not found");
     return;
   }
 
-  for (let dexNum = 130; dexNum < 150; dexNum++) {
+  const startIndex = (page - 1) * itemsperpage + 1;
+  const endIndex = startIndex + itemsperpage - 1;
+
+  for (let dexNum = startIndex; dexNum <= endIndex; dexNum++) {
     const pokemon = await fetchPokemon(dexNum);
-    console.log(pokemon);
     const card = document.createElement("a");
     card.href = "details/detail.html?name=" + pokemon.name;
     card.classList.add(
@@ -43,4 +46,6 @@ export async function generatePokemonCards() {
         </div>`;
     section.appendChild(card);
   }
+
+  generatePagingButton(page);
 }

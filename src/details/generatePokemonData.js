@@ -44,7 +44,7 @@ export async function generatePokemonData(name) {
         </div>
       </section>
       <div class="bg-white p-10 mt-7 rounded-4xl">
-      <div class="grid grid-cols-2 w-11/12 mx-auto gap-2">
+      <div class="grid grid-cols-1 sm:grid-cols-2 sm:w-11/12 w-full mx-auto gap-2">
         <section id="entries" class="${
           typeColors[pokemon.types[0].type.name]
         } align-middle rounded-2xl text-left w-11/12 p-3 [&>*]:self-center" >
@@ -53,7 +53,7 @@ export async function generatePokemonData(name) {
             ${species.flavor_text_entries[0].flavor_text.replace(/\f/g, " ")}
           </p>
         </section>
-        <section id="Info" class="grid grid-cols-2 p-4 ${
+        <section id="Info" class="grid grid-cols-2 gap-2 sm:gap-0 p-4 auto-rows-[minmax(100px,_1fr)] ${
           typeColors[pokemon.types[0].type.name]
         } w-11/12 rounded-2xl [&>*]:self-center">
           <div>
@@ -71,8 +71,9 @@ export async function generatePokemonData(name) {
           <div>
             <h3 class="text-2xl font-semibold">Abilities</h3>
             <p>${pokemon.abilities.find((a) => !a.is_hidden)?.ability.name}</p>
-            <h3 class="text-2xl font-semibold">Hidden Abilities</h3>
-            <p>${pokemon.abilities.find((a) => a.is_hidden)?.ability.name}</p>
+            <p>${
+              pokemon.abilities.find((a) => a.is_hidden)?.ability.name
+            } (Hidden ability)</p>
           </div>
         </section>
         <section id="type_cries">
@@ -104,14 +105,18 @@ export async function generatePokemonData(name) {
           <audio controls src="${pokemon.cries.latest}"></audio>
       </div>
       </section>
-        <section id="Evo">
-          <h2>Evolution Line</h2>
-          <ul class="flex">${evoArr
+        <section id="Evo" class="${
+          typeColors[pokemon.types[0].type.name]
+        } p-4 rounded-2xl shadow-md mt-10">
+          <h2 class="text-center text-white  font-semibold text-2xl mb-2">Evolution Line</h2>
+          <ul class="flex flex-col sm:flex-row gap-4 justify-evenly">${evoArr
             .map(
               (name, index) =>
-                `<li><a href="${"detail.html?name=" + name}"><img src="${
+                `<li class="border rounded-4xl object-contain text-center bg-gray-200 text-gray-800 flex flex-col items-center "><a href="${
+                  "detail.html?name=" + name
+                }" class=""><img src="${
                   evoSprite[index]
-                }" alt="${name}">${
+                }" alt="${name}" class="w-60">${
                   name.charAt(0).toUpperCase() + name.slice(1)
                 }</a></li>`
             )

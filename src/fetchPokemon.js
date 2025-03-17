@@ -18,15 +18,6 @@ export async function fetchPokemonData(url) {
   return data;
 }
 
-export async function fetchPokemonEvoChain(url) {
-  const response = await fetch(url);
-  if (!response) {
-    throw new Error("Failed to fetch data from " + url);
-  }
-  const data = await response.json();
-  return data;
-}
-
 export async function fetchPokemonTypes(url) {
   const response = await fetch;
 }
