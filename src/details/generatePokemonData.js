@@ -4,6 +4,10 @@ import { typeColors } from "../typeColors.js";
 export async function generatePokemonData(name) {
   const container = document.querySelector("#container");
   const pokemon = await fetchPokemon(name);
+  if (!pokemon) {
+    container.innerHTML = `<p>Sorry Pokemon Not found</p>`;
+  }
+
   const species = await fetchPokemonData(pokemon.species.url);
   const evoData = await fetchPokemonData(species.evolution_chain.url);
   const chain = evoData.chain;
@@ -21,9 +25,6 @@ export async function generatePokemonData(name) {
     gender = "M / F";
   }
 
-  if (!pokemon) {
-    container.innerHTML = `<p>Sorry Pokemon Not found</p>`;
-  }
   console.log(pokemon.types[0].type.name);
   console.log(species.flavor_text_entries[0].flavor_text);
 
