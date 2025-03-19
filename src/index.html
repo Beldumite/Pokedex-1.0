@@ -21,7 +21,7 @@
     <header
       class="sticky top-0 z-50 h-14 bg-white/60 backdrop-blur-md shadow-md flex items-center justify-center sm:mb-5"
     >
-      <a class="block w-14 sm:w-12" href="../index.html">
+      <a class="block w-14 sm:w-12" href="#">
         <img
           src="./assets/icons8-pokeball-64.png"
           alt="Pokeball"
@@ -29,6 +29,22 @@
         />
       </a>
     </header>
+    <section class="flex items-center justify-center m-8">
+      <div class="flex gap-1.5 md:w-9/12 w-5/6 justify-center">
+        <input
+          id="searchBar"
+          type="text"
+          class="shadow-md pl-2 md:w-1/2 w-full h-12 border border-black/60 bg-white/60 rounded-l-4xl"
+          placeholder=" Search Pokemon"
+        />
+        <button
+          id="searchButton"
+          class="shadow-md border border-black/60 border-l-0 bg-gray-900 hover:bg-gray-800 p-3 text-white rounded-r-2xl w-10"
+        >
+          <img src="./assets/White-SearchButton.png" alt="icon" />
+        </button>
+      </div>
+    </section>
     <section
       id="card"
       class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-4/5 mr-auto mx-auto gap-4"

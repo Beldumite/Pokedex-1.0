@@ -10,6 +10,7 @@ export function generatePagingButton(currentPage) {
   pagination.innerHTML = "";
 
   const button = document.createElement("button");
+  button.id = "LoadButton";
   button.classList.add(
     "block",
     "mt-5",
