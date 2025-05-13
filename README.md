@@ -8,4 +8,4 @@ now type `npm install` on the terminal to install all dependencies
 and now its done
 
 use this link to open the page
-https://kutuputih.github.io/Pokedex-1.0/src/index.html
+https://beldumite.github.io/Pokedex-1.0/src/index.html
